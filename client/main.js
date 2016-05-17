@@ -8,9 +8,8 @@ Template.timer.onCreated(()=> {
   self = Template.instance();
   self.timer = new ReactiveVar(0);
   Meteor.setInterval(function() {
-    let currValue = self.timer.get();
+    let currValue = self.timer.get() + 1;
     console.log("curr> ", currValue);
-    currValue = currValue++;
     self.timer.set(currValue);
   }, 1000);
 });
